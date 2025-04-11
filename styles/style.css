@@ -92,7 +92,7 @@ header, main, footer {
   letter-spacing: 30.5px;
 }
             /* Индивидуальное расположение для трех слов */
-.aligned-text_left{
+.aligned-text_left {
   display: flex;
   justify-content: start;
   padding-left: 50px;
