@@ -23,7 +23,6 @@ header, main, footer {
 
 .header {
   width: 1100px;
-  height: 293px;
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
@@ -67,8 +66,11 @@ header, main, footer {
 .cover {
   position: relative;
   width: 1100px;
-  height: 757px;
-  overflow: hidden;
+  height: 757px;    
+  /* ПРошлый раз вы сделали замечание убрать здесь фиксированную высоту 
+  что бы она не ограничивала доп контент если его будут добавлять,
+  Но когда я так делаю у меня весь ковер куда то пропадает и становится белым пустым местом на сайте,
+  хотя конструктор при наведении курсора в хроме показыает что он там есть  */
 }
 
 .cover_image {
@@ -76,54 +78,45 @@ header, main, footer {
   width: 100%;
   height: 100%;
   z-index: 1;
-  background-image: url(/images/cover.jpg);
+  background-image: url(../images/cover.jpg);
   background-size: cover;
   background-position: center;
 }
 
 .cover_title {
   display: flex;
+  padding-top: 164px;
   flex-direction: column;
-  position: relative;
-  top: 182px;
-}
-            /* Индивидуальное расположение для трех слов */
-.aligned-text {
   color: white;
   font-size: 100px;
   letter-spacing: 30.5px;
-  align-self: flex-start;
-  position: relative;
-  left: 50px;
-  bottom: 17px;
+}
+            /* Индивидуальное расположение для трех слов */
+.aligned-text_left{
+  display: flex;
+  justify-content: start;
+  padding-left: 50px;
 }
 
 .aligned-text_center {
-  color: white;
-  font-size: 100px;
-  letter-spacing: 30.5px;
-  align-self: center;
-  position: relative;
-  left: 16px;
-  top: 0px;
+  display: flex;
+  justify-content: center;
+  padding-left: 29px;
+  padding-top: 18px;
 }
 
 .aligned-text_right {
-  color: white;
-  font-size: 100px;
-  letter-spacing: 30.5px;
-  align-self: flex-end;
-  position: relative;
-  right: 18px;
-  top: 18px;
+  display: flex;
+  justify-content: end;
+  padding-top: 18px;
+  padding-right: 17px;
 }           /* Индивидуальное расположение для трех слов */
 
 .cover__description {
   display: flex;
-  position: absolute;
-  left: 50px;
-  bottom: 52px;
-  z-index: 3;
+  margin-top: 102px;
+  padding-left: 50px;
+  
   color: white;
   text-transform: uppercase;
   font-size: 22px;
@@ -140,11 +133,10 @@ header, main, footer {
   color: white;
   background-color: transparent;
   text-transform: uppercase;
-  border: 1px solid white;
-  position: relative;
+  border: 1px solid currentColor;
   padding: 12px 32px 11px 31px;
-  top: 2px;
-  left: 108px;
+  margin-top: 2px;
+  margin-left: 108px;
 }
 
 .lots__card-list {
@@ -160,7 +152,7 @@ header, main, footer {
   background-repeat: no-repeat;
   position: relative;
   width: 334px;
-  height: 596px;
+  min-height: 596px;
 }
 
 .lots__heading {
@@ -192,11 +184,11 @@ header, main, footer {
   position: relative;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 3;
   color: white;
   font-size: 20px;
   font-weight: normal;
-  padding-top: 548px;
+  padding-top: 404px;
   padding-right: 40px;
   padding-left: 40px;
   padding-bottom: 48px;
@@ -205,6 +197,8 @@ header, main, footer {
 .overlay {
   background-color: rgb(0 0 0 / 0.6);
   position: absolute;
+  z-index: -1;
+  margin: auto;
   width: 100%;
   height: 100%;
 }
@@ -216,15 +210,18 @@ header, main, footer {
 }
 
 .card_type_film {
-  background-image: url(/images/card-lot-01.jpg);
+  background-image: url(../images/card-lot-01.jpg);
+  z-index: 1;
 }
 
 .card_type_book {
-  background-image: url(/images/card-lot-02.jpg);
+  background-image: url(../images/card-lot-02.jpg);
+  z-index: 1;
 }
 
 .card_type_picture {
-  background-image: url(/images/card-lot-03.jpg);
+  background-image: url(../images/card-lot-03.jpg);
+  z-index: 1;
 }
 
 .about {
@@ -235,7 +232,7 @@ header, main, footer {
 
 .about__logo-image {
   background-color: black;
-  background-image: url(/images/logo-white.svg);
+  background-image: url(../images/logo-white.svg);
   background-size: 148px;
   background-position: center;
   background-repeat: no-repeat;
@@ -261,7 +258,7 @@ header, main, footer {
   padding-left: 17px;
 }
 
-.about__text-1 {
+.about__text-intro {
   margin-bottom: 24px;
 }
 
@@ -269,16 +266,13 @@ header, main, footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 102px;
-  flex-direction: row;
   margin-top: 180px;
-
+  margin-bottom: 82px;
+  
 }
 
 .footer_address {
-  justify-self: left;
   font-size: 18px;
-  font-style: normal;
-  line-height: 24.3px;
   padding-top: 1px;
   padding-left: 51px;
 }
